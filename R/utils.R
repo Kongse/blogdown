@@ -110,7 +110,7 @@ is_rmarkdown = function(x) grepl('[.][Rr]markdown$', x)
 
 # build .Rmarkdown to .markdown, and .Rmd to .html
 output_file = function(file, md = is_rmarkdown(file)) {
-  with_ext(file, ifelse(md, 'markdown', 'html'))
+  with_ext(file, ifelse('markdown', 'html'))
 }
 
 # adapted from webshot:::download_no_libcurl due to the fact that
@@ -182,7 +182,7 @@ check_config = function(config, f) {
   if (is.null(config[['ignoreFiles']])) warning(
     'You are recommended to ignore certain files in ', f, ': set the option ignoreFiles',
     if (grepl('[.]toml$', f)) ' = ' else ': ',
-    '["\\\\.Rmd$", "\\\\.Rmarkdown$", "_files$", "_cache$"]',
+    '["\\\\.Rmd$", "\\\\.Rmarkdown$", "_files$", "_cache$","\\\\.md$",]',
     immediate. = TRUE, call. = FALSE
   )
   config
