@@ -327,8 +327,8 @@ insert_image_addin = function() {
   sys.source(pkg_file('scripts', 'insert_image.R'))
 }
 
-rmd_pattern = '[.][Rr](md|markdown)$'
-md_pattern  = '[.][Rr]?(md|markdown)$'
+rmd_pattern = '[.](Rmd|md)$'
+md_pattern  = '[.][Rr](md|markdown)$'
 
 # scan YAML metadata of all Rmd/md files
 scan_yaml = function(dir = 'content') {
